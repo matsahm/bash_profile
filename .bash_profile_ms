@@ -1,0 +1,73 @@
+###################################
+### DIESE DATEI NICHT VERÄNDERN ###
+### =========================== ###
+### Individuelle Einstellungen  ###
+### in .bash_profile eintragen  ###
+### --------------------------  ###
+### Beim Mac müssen die         ###
+### coreutils installiert sein! ###
+###################################
+
+### OS erkennen ###
+if [ -f /etc/debian_version ]; then
+        alias sysupdate="apt update && apt -y upgrade && apt -y autoremove"
+elif [ -f /etc/redhat-release ]; then
+        alias sysupdate="yum update"
+elif [ -f /etc/synoinfo.conf ]; then
+        alias sysupdate="synoupgrade --check && synoupgrade --download && synoupgrade --start"
+else
+        alias sysupdate="echo Fehler: System nicht erkannt!"
+fi
+
+### System erkennen ###
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+### Allgemein ###
+msver="1.9.0 $machine"
+alias msver="echo $msver"
+export NCURSES_NO_UTF8_ACS=1
+
+### MOTD abschalten ###
+if [ ! -f ~/.hushlogin ]; then
+    touch ~/.hushlogin
+fi
+
+### PS1 anpassen ###
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PS1
+
+### Alias setzen ###
+alias ls="ls --group-directories-first --color -lAh"
+alias ..="cd .."
+alias ...="cd ../.."
+alias df="df -h"
+alias h="history"
+alias tm="tail -n 20 /var/log/messages"
+alias grep="grep --color=auto"
+
+### DOS Alias ###
+alias dir="ls --color -la"
+alias copy="cp"
+alias rename="mv"
+alias md="mkdir"
+alias rd="rmdir"
+alias del="rm"
+alias cls="clear"
+
+### Editor setzen ###
+EDITOR=nano
+export EDITOR
+alias editor=$EDITOR
+
+### Update ###
+alias bp_update="curl -o ~/.bash_profile_ms https://github.com/matsahm/bash_profile/.bash_profile_ms"
+
+### Version ausgeben ###
+echo "bash_profile by MS Version $msver"
