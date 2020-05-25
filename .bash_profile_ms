@@ -30,7 +30,7 @@ case "${unameOut}" in
 esac
 
 ### Allgemein ###
-msver="1.9.0 $machine"
+msver="2.0.0 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 
@@ -67,7 +67,7 @@ export EDITOR
 alias editor=$EDITOR
 
 ### Update ###
-alias bp_update="curl -o ~/.bash_profile_ms https://github.com/matsahm/bash_profile/.bash_profile_ms"
+alias bp_update="curl -o ~/.bash_profile_ms https://raw.githubusercontent.com/matsahm/bash_profile/master/.bash_profile_ms"
 
 ### Version ausgeben ###
 echo "bash_profile by MS Version $msver"
