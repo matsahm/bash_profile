@@ -8,6 +8,16 @@
 ### coreutils installiert sein! ###
 ###################################
 
+### System erkennen ###
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
 ### OS erkennen ###
 if [ -f /etc/debian_version ]; then
         alias sysupdate="apt update && apt -y upgrade && apt -y autoremove"
@@ -18,16 +28,6 @@ elif [ -f /etc/synoinfo.conf ]; then
 else
         alias sysupdate="echo Fehler: System nicht erkannt!"
 fi
-
-### System erkennen ###
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-    CYGWIN*)    machine=Cygwin;;
-    MINGW*)     machine=MinGw;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
 
 ### Allgemein ###
 msver="2.0.0 $machine"
