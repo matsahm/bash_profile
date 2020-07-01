@@ -18,13 +18,15 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-### OS erkennen ###
+### Systemupdate ###
 if [ -f /etc/debian_version ]; then
         alias sysupdate="apt update && apt -y upgrade && apt -y autoremove"
 elif [ -f /etc/redhat-release ]; then
         alias sysupdate="yum update"
 elif [ -f /etc/synoinfo.conf ]; then
         alias sysupdate="synoupgrade --check && synoupgrade --download && synoupgrade --start"
+elif [ -f /usr/local/bin/brew ]; then
+        alias sysupdate="brew update && brew upgrade && brew cask upgrade && brew cleanup"
 else
         alias sysupdate="echo Fehler: System nicht erkannt!"
 fi
