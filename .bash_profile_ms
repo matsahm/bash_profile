@@ -70,7 +70,7 @@ alias editor=$EDITOR
 
 ### Update ###
 echo "Update läuft..."
-alias bp_update="curl --silent -o ~/.bash_profile_ms https://raw.githubusercontent.com/matsahm/bash_profile/master/.bash_profile_ms > /dev/null && . ~/.bash_profile"
+alias bp_update="curl --silent -o ~/.bash_profile_ms https://raw.githubusercontent.com/matsahm/bash_profile/master/.bash_profile_ms > /dev/null && . ~/.bash_profile_ms"
 echo "Fertig. Wird angewendet..."
 
 ### Version ausgeben ###
