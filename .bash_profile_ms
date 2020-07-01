@@ -69,7 +69,7 @@ export EDITOR
 alias editor=$EDITOR
 
 ### Update ###
-alias bp_update="curl -o ~/.bash_profile_ms https://raw.githubusercontent.com/matsahm/bash_profile/master/.bash_profile_ms && . ~/.bash_profile"
+alias bp_update="curl -o ~/.bash_profile_ms https://raw.githubusercontent.com/matsahm/bash_profile/master/.bash_profile_ms > /dev/null && . ~/.bash_profile"
 
 ### Version ausgeben ###
 echo "bash_profile by MS Version $msver"
