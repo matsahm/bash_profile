@@ -32,7 +32,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.0.4 $machine"
+msver="2.0.6 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 
