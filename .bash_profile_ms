@@ -26,13 +26,13 @@ elif [ -f /etc/redhat-release ]; then
 elif [ -f /etc/synoinfo.conf ]; then
         alias sysupdate="synoupgrade --check && synoupgrade --download && synoupgrade --start"
 elif [ -f /usr/local/bin/brew ]; then
-        alias sysupdate="brew update; brew upgrade; brew upgrade --cask; brew cleanup"
+        alias sysupdate="brew update; brew upgrade; brew upgrade --cask --greedy; brew cleanup"
 else
         alias sysupdate="echo Fehler: System nicht erkannt!"
 fi
 
 ### Allgemein ###
-msver="2.0.8 $machine"
+msver="2.0.9 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 
