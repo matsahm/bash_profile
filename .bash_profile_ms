@@ -32,7 +32,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.1.3 $machine"
+msver="2.1.4 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 
@@ -51,7 +51,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias df="df -hl | grep -v shm | grep -v udev"
 alias h="history"
-alias tm="tail -n 20 /var/log/messages"
+if [ "$machine" == "Mac" ]; then
+    alias tm="tail -fn20 /var/log/system.log"
+else
+    alias tm="tail -fn20 /var/log/messages"
+fi
 alias grep="grep --color=auto"
 
 ### DOS Alias ###
