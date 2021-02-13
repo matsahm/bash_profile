@@ -32,9 +32,10 @@ else
 fi
 
 ### Allgemein ###
-msver="2.1.4 $machine"
+msver="2.1.5 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ### MOTD abschalten ###
 if [ ! -f ~/.hushlogin ]; then
