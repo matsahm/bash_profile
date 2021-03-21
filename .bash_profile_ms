@@ -32,7 +32,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.1.5 $machine"
+msver="2.1.6 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -58,6 +58,7 @@ else
     alias tm="tail -fn20 /var/log/messages"
 fi
 alias grep="grep --color=auto"
+alias nano="nano -T 4"
 
 ### DOS Alias ###
 alias dir="ls --color -la"
