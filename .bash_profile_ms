@@ -32,7 +32,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.1.6 $machine"
+msver="2.1.7 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -50,7 +50,7 @@ export PS1
 alias ls="ls --group-directories-first --color -lAh"
 alias ..="cd .."
 alias ...="cd ../.."
-alias df="df -hl | grep -v shm | grep -v udev"
+alias df="df -hl | grep -v shm | grep -v udev | grep -v tmpfs"
 alias h="history"
 if [ "$machine" == "Mac" ]; then
     alias tm="tail -fn20 /var/log/system.log"
@@ -58,7 +58,7 @@ else
     alias tm="tail -fn20 /var/log/messages"
 fi
 alias grep="grep --color=auto"
-alias nano="nano -T 4"
+alias nano="nano -w -T 4"
 
 ### DOS Alias ###
 alias dir="ls --color -la"
