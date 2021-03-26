@@ -21,7 +21,7 @@ esac
 ### Systemupdate ###
 if [ -f /etc/debian_version ]; then
         alias sysupdate="apt update && apt -y upgrade && apt -y autoremove"
-        alias flushdns="echo Fehler: System bisher nicht unterstützt!"
+        alias flushdns="sudo systemd-resolve --flush-caches"
 elif [ -f /etc/redhat-release ]; then
         alias sysupdate="yum update"
         alias flushdns="echo Fehler: System bisher nicht unterstützt!"
@@ -36,7 +36,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.2.0 $machine"
+msver="2.2.1 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
