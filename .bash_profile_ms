@@ -36,7 +36,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.2.1 $machine"
+msver="2.3.0 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -63,6 +63,7 @@ else
 fi
 alias grep="grep --color=auto"
 alias nano="nano -w -T 4"
+alias mkcd="mkdir $1 && cd $1"
 
 ### DOS Alias ###
 alias dir="ls --color -la"
@@ -72,6 +73,11 @@ alias md="mkdir"
 alias rd="rmdir"
 alias del="rm"
 alias cls="clear"
+
+## Funktionen ###
+function mkcd() {
+	mkdir $1 && cd $1
+}
 
 ### Editor setzen ###
 EDITOR=nano
