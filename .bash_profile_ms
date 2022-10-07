@@ -64,6 +64,7 @@ fi
 alias grep="grep --color=auto"
 alias nano="nano -w -T 4"
 alias mkcd="mkdir $1 && cd $1"
+alias sudo='sudo '
 
 ### DOS Alias ###
 alias dir="ls --color -la"
