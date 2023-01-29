@@ -17,4 +17,4 @@
 ```echo '. ~/.bash_profile' >> ~/.bashrc```  
 
 ## Update (benötigt curl)
-```bp_update```  
+```ms_update```  
