@@ -19,6 +19,7 @@ ln -s $PWD/bash_profile/.bash_profile_ms ~/.bash_profile_ms
 ## Installation
 ```
 echo '. ~/.bash_profile_ms' >> ~/.bash_profile
+. ~/.bash_profile_ms
 ```
 
 ## Anpassung Synology (nur bei erster Installation notwendig)
