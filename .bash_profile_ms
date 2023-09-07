@@ -68,6 +68,7 @@ alias nano="nano -w -T 4"
 alias mkcd="mkdir $1 && cd $1"
 alias sudo='sudo '
 alias wetter='read -p "Ort: " a && curl de.wttr.in/$a'
+alias exa="exa -l -F -g -h --icons"
 
 ### DOS Alias ###
 alias dir="ls --color -la"
