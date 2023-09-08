@@ -38,7 +38,7 @@ else
 fi
 
 ### Allgemein ###
-msver="2.5.1 $machine"
+msver="2.5.2 $machine"
 alias msver="echo $msver"
 export NCURSES_NO_UTF8_ACS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -68,7 +68,7 @@ alias nano="nano -w -T 4"
 alias mkcd="mkdir $1 && cd $1"
 alias sudo='sudo '
 alias wetter='read -p "Ort: " a && curl de.wttr.in/$a'
-alias exa="exa -l -F -g -h --icons"
+alias exa="exa -l -F -g -h --icons --group-directories-first"
 
 ### DOS Alias ###
 alias dir="ls --color -la"
